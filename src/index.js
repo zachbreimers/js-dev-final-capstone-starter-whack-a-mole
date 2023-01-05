@@ -4,14 +4,15 @@ const startButton = document.querySelector('#start');
 // TODO: Add the missing query selectors:
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
-const audioHit = new Audio("./assets/hit.mp3");
-const moleSong = new Audio("./assets/molesong.mp3");
+const audioHit = new Audio("../assets/hit.mp3");
+const moleSong = new Audio("../assets/molesong.mp3");
 
 let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
 let difficulty = "hard";
+
 
 /**
  * Generates a random integer within a range.
@@ -225,8 +226,8 @@ function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
   updateScore();
-  audioHit.currentTime = 0;
-  audioHit.play();
+  //audioHit.currentTime = 0;
+  //audioHit.play();
   return points;
 }
 
@@ -262,8 +263,8 @@ function setDuration(duration) {
 */
 function stopGame(){
   // stopAudio(song);  //optional
-  moleSong.pause();
-  moleSong.currentTime = 0;
+  //moleSong.pause();
+  //moleSong.currentTime = 0;
   clearInterval(timer);
   return "game stopped";
 }
@@ -281,8 +282,8 @@ function startGame(){
   showUp();
   startTimer();
   setEventListeners();
-  moleSong.currentTime = 0;
-  moleSong.play();
+  //moleSong.currentTime = 0;
+  //moleSong.play();
 
   return "game started";
 }
